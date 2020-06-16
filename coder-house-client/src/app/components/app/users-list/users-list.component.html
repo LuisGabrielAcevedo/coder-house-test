@@ -4,7 +4,12 @@
   </button>
 </div>
 
-<div class="users-list__table">
+<div class="users-list__loading"  *ngIf="loading">
+  <div class="spinner-border " role="status" >
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div class="users-list__table" *ngIf="!loading">
   <table class="table">
     <thead>
       <tr>
