@@ -25,4 +25,8 @@ export class TaskCardComponent {
       'L'
     );
   }
+
+  formatState() {
+    return this.task.state.replace('_', ' ');
+  }
 }

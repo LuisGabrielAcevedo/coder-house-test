@@ -32,7 +32,7 @@ export class EditTaskDialogComponent implements OnChanges {
     },
     {
       value: 'IN_PROGRESS',
-      text: 'In progress',
+      text: 'In Progress',
     },
     {
       value: 'COMPLETED',

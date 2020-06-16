@@ -32,7 +32,7 @@
               formControlName="assignedTo"
             >
               <option *ngFor="let user of users" [value]="user._id">
-                {{ user.firstName }}
+                {{ user.firstName }} {{ user.lastName }}
               </option>
             </select>
           </div>
