@@ -1,0 +1,32 @@
+<div class="users-list__header">
+  <button type="button" class="btn btn-outline-success" (click)="dialog = true">
+    Add new user
+  </button>
+</div>
+
+<div class="users-list__table">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ user.firstName }}</td>
+        <td>{{ user.lastName }}</td>
+        <td>{{ user.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<app-new-user-dialog
+  [dialog]="dialog"
+  (closeEditDialog)="dialog = false"
+  (reloadList)="getUsers()"
+></app-new-user-dialog>

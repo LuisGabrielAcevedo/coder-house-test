@@ -1,0 +1,21 @@
+<div class="app__toolbar">
+  <h1 class="navbar-brand">{{ title }}</h1>
+  <div class="app__routes">
+    <div
+      class="app__route"
+      [routerLink]="['/users']"
+      [ngClass]="{ 'app__route--selected': selectedRute === '/users' }"
+    >
+      <span>Users</span>
+    </div>
+    <div
+      class="app__route"
+      [routerLink]="['/tasks']"
+      [ngClass]="{ 'app__route--selected': selectedRute === '/tasks' }"
+    >
+      <span>Tasks</span>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

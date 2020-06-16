@@ -1,0 +1,61 @@
+<app-modal *ngIf="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">New task</h5>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Email</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Firstname</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="firstName"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Lastname</label>
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="lastName"
+            />
+          </div>
+        </form>
+      </div>
+      <div
+        class="alert alert-danger"
+        role="alert"
+        style="margin: 20px;"
+        *ngIf="error"
+      >
+        {{ error }}
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+          (click)="cancel()"
+        >
+          Cancel
+        </button>
+        <button type="button" class="btn btn-success" (click)="save()">
+          Save
+        </button>
+      </div>
+    </div>
+  </div>
+</app-modal>

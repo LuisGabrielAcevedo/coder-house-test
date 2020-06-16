@@ -1,0 +1,68 @@
+<app-modal *ngIf="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Edit task</h5>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="form">
+          <div class="form-group">
+            <label for="exampleFormControlInput1">Title</label>
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput1"
+              formControlName="title"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlTextarea1">Description</label>
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+              formControlName="description"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">Assign to</label>
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              formControlName="assignedTo"
+            >
+              <option *ngFor="let user of users" [value]="user._id">
+                {{ user.firstName }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2">State</label>
+            <select
+              class="form-control"
+              id="exampleFormControlSelect2"
+              formControlName="state"
+            >
+              <option *ngFor="let state of states" [value]="state.value">
+                {{ state.text }}
+              </option>
+            </select>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-dismiss="modal"
+          (click)="cancel()"
+        >
+          Cancel
+        </button>
+        <button type="button" class="btn btn-success" (click)="edit()">
+          Edit
+        </button>
+      </div>
+    </div>
+  </div>
+</app-modal>

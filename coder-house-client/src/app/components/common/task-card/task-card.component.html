@@ -1,0 +1,32 @@
+<div
+  class="card text-white bg-secondary mb-3 task-card"
+  [ngClass]="{
+    'bg-secondary': task.state === 'CREATED',
+    'bg-success': task.state === 'COMPLETED',
+    'bg-primary': task.state === 'IN_PROGRESS',
+    'bg-info': task.state === 'ASSIGNED'
+  }"
+>
+  <div class="card-header task-card__header">
+    <span> {{ task.state }}</span>
+    <span>{{ formatDate() }}</span>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ task.title }}</h5>
+    <p class="card-text">
+      {{ task.description }}
+    </p>
+  </div>
+  <div class="card-footer task-card__footer" *ngIf="task.state !== 'COMPLETED'">
+    <button
+      type="button"
+      class="btn btn-danger task-card__button"
+      (click)="deleteAcction()"
+    >
+      Delete
+    </button>
+    <button type="button" class="btn btn-success" (click)="editAcction()">
+      Edit
+    </button>
+  </div>
+</div>

@@ -1,0 +1,122 @@
+<div class="tasks__header">
+  <button
+    type="button"
+    class="btn btn-outline-success"
+    (click)="dialog2 = true"
+  >
+    Add new task
+  </button>
+</div>
+
+<div *ngIf="loading">
+  <div class="tasks__user-box">
+    Loading ...
+  </div>
+  <div class="tasks">
+    <div class="tasks__column"><app-skeleton></app-skeleton></div>
+    <div class="tasks__column"><app-skeleton></app-skeleton></div>
+    <div class="tasks__column"><app-skeleton></app-skeleton></div>
+    <div class="tasks__column"><app-skeleton></app-skeleton></div>
+  </div>
+</div>
+
+<div *ngIf="!loading">
+  <div class="tasks__user-box">
+    Unassigned tasks
+  </div>
+  <div class="tasks">
+    <div class="tasks__column">
+      <app-task-card
+        *ngFor="let task of getTask('null', 'CREATED')"
+        [task]="task"
+        (editEvent)="taskToEdit = $event; dialog1 = true"
+        (deleteEvent)="taskToDelete = $event; dialog3 = true"
+      ></app-task-card>
+    </div>
+    <div class="tasks__column">
+      <app-task-card
+        *ngFor="let task of getTask('null', 'ASSIGNED')"
+        [task]="task"
+        (editEvent)="taskToEdit = $event; dialog1 = true"
+        (deleteEvent)="taskToDelete = $event; dialog3 = true"
+      ></app-task-card>
+    </div>
+    <div class="tasks__column">
+      <app-task-card
+        *ngFor="let task of getTask('null', 'IN_PROGRESS')"
+        [task]="task"
+        (editEvent)="taskToEdit = $event; dialog1 = true"
+        (deleteEvent)="taskToDelete = $event; dialog3 = true"
+      ></app-task-card>
+    </div>
+    <div class="tasks__column">
+      <app-task-card
+        *ngFor="let task of getTask('null', 'COMPLETED')"
+        [task]="task"
+        (editEvent)="taskToEdit = $event; dialog1 = true"
+        (deleteEvent)="taskToDelete = $event; dialog3 = true"
+      ></app-task-card>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="!loading">
+  <div *ngFor="let user of users">
+    <div class="tasks__user-box">{{ user.firstName }} {{ user.lastName }}</div>
+    <div class="tasks">
+      <div class="tasks__column">
+        <app-task-card
+          *ngFor="let task of getTask(user._id, 'CREATED')"
+          [task]="task"
+          (editEvent)="taskToEdit = $event; dialog1 = true"
+          (deleteEvent)="taskToDelete = $event; dialog3 = true"
+        ></app-task-card>
+      </div>
+      <div class="tasks__column">
+        <app-task-card
+          *ngFor="let task of getTask(user._id, 'ASSIGNED')"
+          [task]="task"
+          (editEvent)="taskToEdit = $event; dialog1 = true"
+          (deleteEvent)="taskToDelete = $event; dialog3 = true"
+        ></app-task-card>
+      </div>
+      <div class="tasks__column">
+        <app-task-card
+          *ngFor="let task of getTask(user._id, 'IN_PROGRESS')"
+          [task]="task"
+          (editEvent)="taskToEdit = $event; dialog1 = true"
+          (deleteEvent)="taskToDelete = $event; dialog3 = true"
+        ></app-task-card>
+      </div>
+      <div class="tasks__column">
+        <app-task-card
+          *ngFor="let task of getTask(user._id, 'COMPLETED')"
+          [task]="task"
+          (editEvent)="taskToEdit = $event; dialog1 = true"
+          (deleteEvent)="taskToDelete = $event; dialog3 = true"
+        ></app-task-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-delete-task-dialog
+  [dialog]="dialog3"
+  [task]="taskToDelete"
+  (closeEditDialog)="dialog3 = false; taskToDelete = null"
+  (reloadList)="getTasks()"
+></app-delete-task-dialog>
+
+<app-new-task-dialog
+  [dialog]="dialog2"
+  (closeEditDialog)="dialog2 = false"
+  (reloadList)="getTasks()"
+></app-new-task-dialog>
+
+<app-edit-task-dialog
+  [dialog]="dialog1"
+  [users]="users"
+  [task]="taskToEdit"
+  (closeEditDialog)="dialog1 = false; taskToEdit = null"
+  (reloadList)="getTasks()"
+></app-edit-task-dialog>

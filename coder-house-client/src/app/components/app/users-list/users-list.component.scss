@@ -1,0 +1,13 @@
+@import 'variables';
+
+.users-list {
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    padding: $spacing-S;
+    padding-bottom: 0;
+  }
+  &__table {
+    margin: $spacing-S;
+  }
+}

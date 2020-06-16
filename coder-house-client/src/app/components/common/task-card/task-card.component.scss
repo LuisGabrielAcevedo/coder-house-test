@@ -1,0 +1,18 @@
+@import 'variables';
+.task-card {
+  display: flex;
+  margin: $spacing-XXS;
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__button {
+    margin-right: $spacing-XXS;
+  }
+}

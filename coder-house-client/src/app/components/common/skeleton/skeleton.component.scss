@@ -1,0 +1,20 @@
+@import 'variables';
+
+@keyframes gradient {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  animation: gradient 2s infinite linear;
+  background: linear-gradient(to right, #ecebec 8%, #f9f9f9 18%, #ecebec 33%);
+  background-size: 800px 100px;
+  border-radius: 6px;
+  display: flex;
+  height: 200px;
+  margin: $spacing-XXS;
+}

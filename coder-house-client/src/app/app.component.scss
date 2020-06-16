@@ -1,0 +1,30 @@
+@import 'variables';
+
+.app {
+  &__toolbar {
+    background-color: $color-primary !important;
+    color: $color-tertiary;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    padding: 0 $spacing-S;
+  }
+  &__routes {
+    margin-left: $spacing-S;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  &__route {
+    margin: 0 $spacing-XXS;
+    padding: $spacing-XS;
+    height: 100%;
+    cursor: pointer;
+    outline: none;
+  }
+  &__route:hover,
+  &__route--selected {
+    background-color: $color-quaternary;
+    color: $color-tertiary;
+  }
+}

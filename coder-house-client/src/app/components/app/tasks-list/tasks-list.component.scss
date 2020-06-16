@@ -1,0 +1,31 @@
+@import 'variables';
+
+.tasks {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 $spacing-S;
+  &__header {
+    display: flex;
+    justify-content: flex-end;
+    padding: $spacing-S;
+    padding-bottom: 0;
+  }
+  &__column {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-left: 1px solid gray;
+    min-height: 100px;
+    background-color: $color-secondary;
+  }
+  &__column:last-child {
+    border-right: 1px solid gray;
+  }
+  &__user-box {
+    display: flex;
+    padding: $spacing-XS $spacing-S;
+    font-weight: 600;
+    font-size: $font-size-XL;
+    text-transform: capitalize;
+  }
+}
