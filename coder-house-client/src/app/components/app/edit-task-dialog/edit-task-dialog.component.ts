@@ -42,10 +42,10 @@ export class EditTaskDialogComponent implements OnChanges {
   public form: FormGroup;
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      title: null,
-      description: null,
-      assignedTo: null,
-      state: null,
+      title: '',
+      description: '',
+      assignedTo: '',
+      state: '',
     });
   }
 

@@ -15,8 +15,8 @@ export class NewTaskDialogComponent {
   public error = '';
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      title: [null, Validators.required],
-      description: null,
+      title: ['', Validators.required],
+      description: '',
     });
   }
 

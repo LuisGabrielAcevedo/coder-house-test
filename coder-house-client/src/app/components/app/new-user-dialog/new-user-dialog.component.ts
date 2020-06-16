@@ -15,9 +15,9 @@ export class NewUserDialogComponent {
   public error = '';
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
-      email: [null, Validators.required],
-      firstName: [null, Validators.required],
-      lastName: [null, Validators.required],
+      email: ['', Validators.required],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
     });
   }
 
