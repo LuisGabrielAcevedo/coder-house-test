@@ -7,6 +7,7 @@ export class Base extends Model {
     per_page: 'itemsPerPage',
   };
   baseUrl() {
-    return 'https://coder-house-api.herokuapp.com/v1';
+    // return 'https://coder-house-api.herokuapp.com/v1';
+    return 'http://localhost:3200/v1';
   }
 }
