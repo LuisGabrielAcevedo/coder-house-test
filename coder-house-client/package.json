@@ -22,7 +22,7 @@
     "@angular/router": "~8.2.14",
     "express": "^4.17.1",
     "lgx-axios-dev-tools": "^1.0.3",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.26.0",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
