@@ -23,7 +23,7 @@
     "express": "^4.17.1",
     "lgx-axios-dev-tools": "^1.0.3",
     "lodash": "^4.17.15",
-    "moment": "^2.26.0",
+    "moment": "^2.29.2",
     "path": "^0.12.7",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
